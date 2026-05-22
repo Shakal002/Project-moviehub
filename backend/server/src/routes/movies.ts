@@ -1,0 +1,12 @@
+import express from 'express';
+import auth from '../middleware/auth';
+import { getMovies, addMovie, updateMovie, deleteMovie, toggleFavorite, toggleWatched } from '../controllers/movieController';
+const router = express.Router();
+router.use(auth);
+router.get('/', getMovies);
+router.post('/', addMovie);
+router.put('/:id', updateMovie);
+router.delete('/:id', deleteMovie);
+router.patch('/:id/favorite', toggleFavorite);
+router.patch('/:id/watched', toggleWatched);
+export default router;

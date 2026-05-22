@@ -1,0 +1,253 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Хиро-секция */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.heroContent {
+  flex: 1;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.heroAccent {
+  background: linear-gradient(135deg, #e50914, #ff6b00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Статистика */
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNumber {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+.heroDecoration {
+  flex-shrink: 0;
+}
+
+.heroEmoji {
+  font-size: 5rem;
+  display: block;
+  animation: pulse 2s infinite;
+}
+
+/* Кнопка добавления */
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.addButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.addButtonIcon {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* Промпт для неавторизованных */
+.authPrompt {
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.05) 0%, rgba(255, 107, 0, 0.05) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.authPromptIcon {
+  font-size: 2.5rem;
+}
+
+.authPromptTitle {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.authPromptText {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.authButton {
+  margin-left: auto;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.authButton:hover {
+  background: var(--primary-dark);
+}
+
+/* Счётчик результатов */
+.resultCount {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+/* Сетка фильмов */
+.movieGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Пустое состояние */
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.emptyIconWrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: var(--surface-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+}
+
+.emptyIcon {
+  font-size: 2.5rem;
+}
+
+.emptyState h3 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.emptyButton {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.emptyButton:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .statsRow {
+    justify-content: center;
+  }
+
+  .heroEmoji {
+    font-size: 3rem;
+  }
+
+  .authPrompt {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .authButton {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
